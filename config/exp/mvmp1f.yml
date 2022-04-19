@@ -46,5 +46,5 @@ associate:
       min_conf: 0.3
     "easymocap.assignment.criterion.CritLimbLength":
       max_rate: 0.5
-      body_type: "body25"
+      body_type: "bodyhandface"
       min_conf: 0.1

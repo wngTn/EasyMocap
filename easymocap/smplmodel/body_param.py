@@ -29,7 +29,7 @@ def select_nf(params_all, nf):
         output['shapes'] = params_all['shapes'][nf:nf+1, :]
     return output
 
-def load_model(gender='neutral', use_cuda=True, model_type='smpl', skel_type='body25', device=None, model_path='data/smplx'):
+def load_model(gender='neutral', use_cuda=True, model_type='smpl', skel_type='COCO', device=None, model_path='data/smplx'):
     # prepare SMPL model
     # print('[Load model {}/{}]'.format(model_type, gender))
     import torch
@@ -42,6 +42,8 @@ def load_model(gender='neutral', use_cuda=True, model_type='smpl', skel_type='bo
     if model_type == 'smpl':
         if skel_type == 'body25':
             reg_path = join(model_path, 'J_regressor_body25.npy')
+        elif skel_type == 'COCO':
+            reg_path = join(model_path, 'J_regressor_coco.npy')
         elif skel_type == 'h36m':
             reg_path = join(model_path, 'J_regressor_h36m.npy')
         else:

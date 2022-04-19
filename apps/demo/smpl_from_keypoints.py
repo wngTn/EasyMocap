@@ -24,7 +24,7 @@ def smpl_from_skel(path, sub, out, skel3d, args):
     weight_shape = load_weight_shape(args.model, args.opts)
     weight_pose = load_weight_pose(args.model, args.opts)
     with Timer('Loading {}, {}'.format(args.model, args.gender)):
-        body_model = load_model(args.gender, model_type=args.model)
+        body_model = load_model(args.gender, model_type=args.model, skel_type=args.body)
     for pid, result in results3d.items():
         body_params = smpl_from_keypoints3d(body_model, result['keypoints3d'], config, args,
             weight_shape=weight_shape, weight_pose=weight_pose)

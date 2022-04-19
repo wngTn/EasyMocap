@@ -238,8 +238,8 @@ class Track3D(BaseTrack):
             write_keypoints3d(outname, result)
 
     def _compute_dist(self, dimGroups, results_window):
-        max_dist = 0.15
-        max_dist_step = 0.01
+        max_dist = 0.3
+        max_dist_step = 0.05
         window_size = len(results_window)
         dist = np.eye(dimGroups[-1])
         for i in range(window_size-1):

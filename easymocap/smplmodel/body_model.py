@@ -104,6 +104,7 @@ class SMPLlayer(nn.Module):
             self.posedirs = None
         # add shape blending
         if use_shape_blending:
+            # val: 6890 x 3 x 10
             val = to_tensor(to_np(data['shapedirs']), dtype=dtype)
             self.register_buffer('shapedirs', val)
         else:
@@ -130,9 +131,11 @@ class SMPLlayer(nn.Module):
                 self.shapedirs = self.shapedirs[:, :, :NUM_SHAPES]
         # joints regressor
         if regressor_path is not None and use_joints:
+            # 25/17 x 6890
             X_regressor = load_regressor(regressor_path)
+            # 25/17 + 24 x 6890
             X_regressor = torch.cat((self.J_regressor, X_regressor), dim=0)
-
+            # 25/17 x 49/41
             j_J_regressor = torch.zeros(self.J_regressor.shape[0], X_regressor.shape[0], device=device)
             for i in range(self.J_regressor.shape[0]):
                 j_J_regressor[i, i] = 1

@@ -110,10 +110,16 @@ class LossRegPosesZero:
         if keypoints.shape[-2] <= 15:
             use_feet = False
             use_head = False
+        # If we use COCO we don't use the feet
+        elif keypoints.shape[-2] <= 17:
+            use_feet = False
+            use_head = True
         else:
             use_feet = keypoints[..., [19, 20, 21, 22, 23, 24], -1].sum() > 0.1
             use_head = keypoints[..., [15, 16, 17, 18], -1].sum() > 0.1
         if model_type == 'smpl':
+            # R/L Elbow
+            # RHip, RKnee, RAnkle, LHip, LEar, LBigToe, RSmallToe, RBigToe, LHell
             SMPL_JOINT_ZERO_IDX = [3, 6, 9, 10, 11, 13, 14, 20, 21, 22, 23]
         elif model_type == 'smplh':
             SMPL_JOINT_ZERO_IDX = [3, 6, 9, 10, 11, 13, 14]
