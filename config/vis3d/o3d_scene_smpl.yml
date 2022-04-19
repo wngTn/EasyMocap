@@ -6,6 +6,6 @@ body_model:
     _no_merge_: True
     model_path: "data/smplx/smpl"
     model_type: "smpl"
-    gender: "male"
+    gender: "neutral"
     device: "cuda"
     regressor_path: "data/smplx/J_regressor_coco.npy"

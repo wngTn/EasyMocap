@@ -104,14 +104,14 @@ CONFIG['COCO']['colors'] = [
 
 CONFIG['COCO']['skeleton'] = \
 {
-
+    #TODO Change order?
     (1, 0) : {'mean': 0.043, 'std': 0.009}, # Leye -> Nose
     (2, 0) : {'mean': 0.043, 'std': 0.009}, # Reye -> Nose
     (2, 1) : {'mean': 0.06, 'std': 0.012}, # Reye -> Leye
     (3, 1) : {'mean': 0.104, 'std': 0.021}, # Lear -> Leye
-    (4, 2) : {'mean': 0.105, 'std': 0.021}, # Rer -> Reye
+    (4, 2) : {'mean': 0.105, 'std': 0.021}, # Rear -> Reye
     (5, 3) : {'mean': 0.258, 'std': 0.082}, # Lshoulder -> Lear
-    (6, 4) : {'mean': 0.258, 'std': 0.082}, # Rshoulder -> Rer
+    (6, 4) : {'mean': 0.258, 'std': 0.082}, # Rshoulder -> Rear
     (7, 5) : {'mean': 0.281, 'std': 0.056}, # Lelbow -> LShoulder
     (9, 7) : {'mean': 0.258, 'std': 0.052}, # Lwri -> Lelb
     (8, 6) : {'mean': 0.283, 'std': 0.057}, # Relb -> Rshoulder
