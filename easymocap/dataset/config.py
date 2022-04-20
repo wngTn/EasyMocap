@@ -93,10 +93,9 @@ CONFIG['COCO'] = {
 }
 
 CONFIG['COCO']['kintree_order'] = [[[0, 1], [0, 2], [1, 2], [1, 3], [2, 4],
-                                    [3, 5], [4, 6], [5, 7], [7, 9], [6, 8],
-                                    [8, 10], [5, 11], [11, 13], [13, 15],
-                                    [6, 12], [12, 14], [14, 16], [5, 6],
-                                    [11, 12]]]
+                                    [5, 3], [6, 4], [5, 6], [7, 5], [9, 7], [8, 6],
+                                    [10, 8], [11, 12], [11, 5], [13, 11], [12, 6], 
+                                    [14, 12], [13, 15], [16, 14]]]
 CONFIG['COCO']['colors'] = [
     'k', 'r', 'r', 'r', 'b', 'b', 'b', 'k', 'r', 'r', 'r', 'b', 'b', 'b', 'r',
     'b', 'r'
@@ -104,26 +103,25 @@ CONFIG['COCO']['colors'] = [
 
 CONFIG['COCO']['skeleton'] = \
 {
-    #TODO Change order?
     (1, 0) : {'mean': 0.043, 'std': 0.009}, # Leye -> Nose
     (2, 0) : {'mean': 0.043, 'std': 0.009}, # Reye -> Nose
     (2, 1) : {'mean': 0.06, 'std': 0.012}, # Reye -> Leye
     (3, 1) : {'mean': 0.104, 'std': 0.021}, # Lear -> Leye
     (4, 2) : {'mean': 0.105, 'std': 0.021}, # Rear -> Reye
-    (5, 3) : {'mean': 0.258, 'std': 0.082}, # Lshoulder -> Lear
-    (6, 4) : {'mean': 0.258, 'std': 0.082}, # Rshoulder -> Rear
-    (7, 5) : {'mean': 0.281, 'std': 0.056}, # Lelbow -> LShoulder
-    (9, 7) : {'mean': 0.258, 'std': 0.052}, # Lwri -> Lelb
-    (8, 6) : {'mean': 0.283, 'std': 0.057}, # Relb -> Rshoulder
-    (10, 8) : {'mean': 0.258, 'std': 0.052}, # Rwri -> Relb
-    (11, 5) : {'mean': 0.463, 'std': 0.093}, # Lhip -> Lshoulder
-    (13, 11) : {'mean': 0.438, 'std': 0.088}, # Lknee -> Lhip
-    (15, 13) : {'mean': 0.408, 'std': 0.082}, # Lank -> Lknee
-    (12, 6) : {'mean': 0.463, 'std': 0.093}, # Rhip -> Rshoulder
-    (14, 12) : {'mean': 0.438, 'std': 0.088}, # Rknee -> Rhip
-    (16, 14) : {'mean': 0.406, 'std': 0.081}, # Rank -> Rknee
+    (3, 5) : {'mean': 0.258, 'std': 0.082}, # Lear -> Lshoulder
+    (4, 6) : {'mean': 0.258, 'std': 0.082}, # Rear -> Rshoulder 
     (6, 5) : {'mean': 0.232, 'std': 0.031}, # Rshoulder -> Lshoulder
-    (12, 11) : {'mean': 0.212, 'std': 0.021} # Rhip -> LHip
+    (5, 7) : {'mean': 0.281, 'std': 0.056}, # LShoulder -> Lelbow 
+    (7, 9) : {'mean': 0.258, 'std': 0.052}, # Lelb -> Lwri
+    (6, 8) : {'mean': 0.283, 'std': 0.057}, # Rshoulder -> Relb 
+    (8, 10) : {'mean': 0.258, 'std': 0.052}, # Relb -> Rwri
+    (12, 11) : {'mean': 0.212, 'std': 0.021}, # Rhip -> LHip
+    (5, 11) : {'mean': 0.463, 'std': 0.093}, # Lshoulder -> Lhip
+    (11, 13) : {'mean': 0.438, 'std': 0.088}, # Lhip -> Lknee
+    (6, 12) : {'mean': 0.463, 'std': 0.093}, # Rshoulder -> Rhip
+    (12, 14) : {'mean': 0.438, 'std': 0.088}, # Rhip -> Rknee
+    (15, 13) : {'mean': 0.408, 'std': 0.082}, # Lank -> Lknee
+    (14, 16) : {'mean': 0.406, 'std': 0.081}, # Rknee -> Rank
 }
 
 CONFIG['body25'] = {
