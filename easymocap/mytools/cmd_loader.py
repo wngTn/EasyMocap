@@ -34,7 +34,7 @@ def load_parser():
     parser.add_argument('--cfg_model', type=str, default=None)
     parser.add_argument('--body', type=str, default='COCO', choices=['COCO', 'body15', 'body25', 'h36m', 'bodyhand', 'bodyhandface', 'handl', 'handr', 'total'])
     parser.add_argument('--model', type=str, default='smpl', choices=['smpl', 'smplh', 'smplx', 'manol', 'manor'])
-    parser.add_argument('--gender', type=str, default='male', 
+    parser.add_argument('--gender', type=str, default='neutral', 
         choices=['neutral', 'male', 'female'])
     # Input control
     detec = parser.add_argument_group('Detection control')
