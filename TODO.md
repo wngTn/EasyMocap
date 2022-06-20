@@ -1,0 +1,1 @@
+Auto track does not work if there are less than specified person in a frame
