@@ -114,7 +114,7 @@ class BaseTrack:
                     for key in frames_of_id[id1].keys():
                         results[key][frames_of_id[id1][key]]['id'] = id0
                         frames_of_id[id0][key] = frames_of_id[id1][key]
-                    frames_of_id.pop(id1)
+                    # frames_of_id.pop(id1)
                     continue
                 log('Conflict; not merged')
         return results

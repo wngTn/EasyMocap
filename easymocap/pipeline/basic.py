@@ -87,7 +87,7 @@ def smpl_from_keypoints3d(body_model, kp3ds, config, args,
         # Using COCO we optimize using all limbs
         if args.body == 'COCO':
             params_shape = optimizeShape(body_model, params_init, kp3ds, 
-                weight_loss=weight_shape, kintree=CONFIG['COCO']['kintree'][:])
+                weight_loss=weight_shape, kintree=CONFIG['COCO']['kintree_order'][:])
         # when use SMPL model, optimize the shape only with first 1-14 limbs, 
         # don't use (nose, neck)
         else:

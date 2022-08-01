@@ -18,9 +18,9 @@ if __name__ == "__main__":
     cfg = {
         'path': args.path,
         'out': args.out,
-        'WINDOW_SIZE': 10,
-        'MIN_FRAMES': 10,
-        'SMOOTH_SIZE': 5
+        'WINDOW_SIZE': 20,
+        'MIN_FRAMES': 20,
+        'SMOOTH_SIZE': 8
     }
     if args.track3d:
         tracker = Track3D(with2d=False, **cfg)
